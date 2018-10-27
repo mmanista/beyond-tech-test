@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'variables.scss';
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: Roboto, Helvetica, sans-serif;
+
+    background-color: #d3d3d3;
+}
+
+.beyond-container {
+    margin-left: auto;
+    margin-right: auto;
+    //background-image: url('/assets/images/main_bg.png');
+    @media only screen and (max-width: $breakpoint-576 - 1) {
+        width: 100%;
+    }
+    @media only screen and (min-width: $breakpoint-576) {
+        width: 576px;
+    }
+    @media only screen and (min-width: $breakpoint-768) {
+        width: 768px;
+    }
+    @media only screen and (min-width: $breakpoint-1024) {
+        width: 1024px;
+    }
+
+    > .content {
+        padding: 0 $container-side-padding;
+
+        @media only screen and (max-width: $breakpoint-768 - 1) {
+            padding: 0 $container-side-padding-mobile;
+        }
+    }
+}
+
+@font-face {
+    font-family: 'Alfa Slab One';
+    src: url('/assets/fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf');
+    font-weight: normal;
+}
+
+.alfa-slab {
+    font-family: Alfa Slab One, Helvetica, sans-serif;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/assets/fonts/Roboto/Roboto-Regular.ttf');
+    font-weight: normal;
+}

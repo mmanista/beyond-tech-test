@@ -1,0 +1,28 @@
+@import 'variables.scss';
+
+.title-bar {
+    position: relative;
+    background-image: url('/assets/images/header_bg.png');
+    height: 40px;
+    width: 100%;
+}
+
+.title-img-container {
+    position: absolute;
+
+    width: 248px;
+    top: 16px;
+    z-index: 2;
+
+    // apply the same padding as the container has
+    margin-left: $container-side-padding;
+    @media only screen and (max-width: $breakpoint-768 - 1) {
+        margin-left: $container-side-padding-mobile;
+        width: 185px;
+        top: 21px;
+    }
+
+    > .title-img {
+        max-width: 100%;
+    }
+}
