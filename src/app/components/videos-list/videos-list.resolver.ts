@@ -9,7 +9,7 @@ export class VideosListResolver implements Resolve<any> {
     constructor(private videosService: VideosService) {}
 
     resolve(): any {
-        return this.videosService.getImages()
+        return this.videosService.getVideos()
             .pipe(catchError((error) => of(error))
         );
     }

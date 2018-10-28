@@ -1,0 +1,17 @@
+<div class="single-video-tile">
+    <div class="position-relative-helper">
+        <img class="video-img" [src]="videoDetails.snippet.thumbnails.medium.url">
+        <div class="video-title-container">
+            <span class="video-title">{{videoDetails.snippet.title}}</span>
+            <div class="play-button">
+                <img src="assets/images/play_button.svg">
+            </div>
+        </div>
+    </div>
+    <div class="video-published-date">
+        <span>Published on {{videoDetails.contentDetails.videoPublishedAt | dateTime}}</span>
+    </div>
+    <div class="video-description">
+        <span>{{videoDetails.snippet.description | textEllipsis}}</span>
+    </div>
+</div>

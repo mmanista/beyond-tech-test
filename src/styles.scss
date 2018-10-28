@@ -9,22 +9,15 @@ body {
     padding: 0;
     color: white;
     font-family: Roboto, Helvetica, sans-serif;
-
-    background-color: #d3d3d3;
+    background-color: #191919;
 }
 
 .beyond-container {
     margin-left: auto;
     margin-right: auto;
-    //background-image: url('/assets/images/main_bg.png');
-    @media only screen and (max-width: $breakpoint-576 - 1) {
+    background-image: url('/assets/images/main_bg.png');
+    @media only screen and (max-width: $breakpoint-1024 - 1) {
         width: 100%;
-    }
-    @media only screen and (min-width: $breakpoint-576) {
-        width: 576px;
-    }
-    @media only screen and (min-width: $breakpoint-768) {
-        width: 768px;
     }
     @media only screen and (min-width: $breakpoint-1024) {
         width: 1024px;
