@@ -20,12 +20,14 @@ export class VideosListComponent implements OnInit {
     }
 
     ngOnInit() {
+        // get data from route resolver
         this.videosData = this.route.snapshot.data.videosData;
     }
 
-    gotoNextPage(nextPageToken) {
-        this.videosService.getNextPage(nextPageToken).subscribe(
+    switchPage(nextPageToken) {
+        this.videosService.getVideosPage(nextPageToken).subscribe(
             (response: any) => {
+                sessionStorage.currentPageToken = nextPageToken;
                 window.scrollTo(0, 0);
                 this.videosData = response;
             });

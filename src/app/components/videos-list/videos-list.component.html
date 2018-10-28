@@ -9,8 +9,15 @@
             <!--<div [ngStyle]="{'backgroundImage': 'url(' + video.snippet.thumbnails.high.url + ')'}"></div>-->
         </div>
     </div>
-    <div style="text-align: center">
-        <button [disabled]="!videosData.prevPageToken" (click)="gotoNextPage(videosData.prevPageToken)">Previous page</button>
-        <button [disabled]="!videosData.nextPageToken" (click)="gotoNextPage(videosData.nextPageToken)">Next page</button>
+    <div class="pagination">
+        <button class="text-aqua" [disabled]="!videosData.prevPageToken" (click)="switchPage(videosData.prevPageToken)">
+            <!--<span style="font-size: 20px">&#8249;</span> Previous-->
+            <img class="arrow arrow-prev" src="assets/images/back_arrow.svg">
+            <span class="arrow-text" style="display: inline-block; vertical-align: top; font-size: 13px; margin-top: 1px">Previous</span>
+        </button>
+        <button class="text-aqua" [disabled]="!videosData.nextPageToken" (click)="switchPage(videosData.nextPageToken)">
+            <span class="arrow-text">Next</span>
+            <img class="arrow-next" src="assets/images/back_arrow.svg">
+        </button>
     </div>
 </div>
