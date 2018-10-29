@@ -13,10 +13,11 @@ export class PlayVideoComponent implements OnInit {
     isLoading: boolean;
     constructor(private readonly http: HttpClient, private readonly route: ActivatedRoute, private readonly videosService: VideosService) {}
     ngOnInit() {
+        /* performing this here instead of creating a resolver allows us (in the future)
+        * to switch across videos without reloading the page */
         this.route.params.subscribe((params: Params) => {
             this.isLoading = true;
             this.videosService.getSingleVideoData(params.videoId).subscribe((response: any) => {
-                console.log("A DEJ", response);
                 this.singleVideoData = response;
                 this.isLoading = false;
             });

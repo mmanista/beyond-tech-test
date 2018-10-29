@@ -12,9 +12,6 @@ export class SingleVideoTileComponent {
     @Input() videoDetails: any;
 
     gotoVideo() {
-        console.log("CYCE");
-        this.router.navigate(['/play/' + this.videoDetails.snippet.resourceId.videoId]).then(response => {
-            console.log("RESPONSE", response);
-        });
+        this.router.navigate(['/play/' + this.videoDetails.snippet.resourceId.videoId]);
     }
 }
