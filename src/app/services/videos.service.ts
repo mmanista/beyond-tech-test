@@ -21,17 +21,17 @@ export class VideosService {
         apiKey: 'key=AIzaSyCuv_16onZRx3qHDStC-FUp__A6si-fStw'
     };
 
+    static getPageTokenQueryParam(pageToken: string) {
+        return pageToken ? `pageToken=${pageToken}&` : '';
+    }
+
     private getYoutubePlaylistApiUrl(pageToken: string): string {
         return this.youtubeApiUrls.base +
             this.youtubeApiUrls.playlistItems.url +
-            this.getPageTokenQueryParam(pageToken) +
+            VideosService.getPageTokenQueryParam(pageToken) +
             this.youtubeApiUrls.playlistItems.additionalQueryParams +
             '&' +
             this.youtubeApiUrls.apiKey;
-    }
-
-    private getPageTokenQueryParam(pageToken: string) {
-        return pageToken ? `pageToken=${pageToken}&` : '';
     }
 
     private getYoutubeVideosApiUrl(videoId: string): string {
