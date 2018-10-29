@@ -5,19 +5,21 @@
                 [videoDetails]="video"
             >
             </beyond-single-video-tile>
-            <!--<img [src]="video.snippet.thumbnails.medium.url">-->
-            <!--<div [ngStyle]="{'backgroundImage': 'url(' + video.snippet.thumbnails.high.url + ')'}"></div>-->
         </div>
     </div>
     <div class="pagination">
-        <button class="text-aqua" [disabled]="!videosData.prevPageToken" (click)="switchPage(videosData.prevPageToken)">
-            <!--<span style="font-size: 20px">&#8249;</span> Previous-->
-            <img class="arrow arrow-prev" src="assets/images/back_arrow.svg">
-            <span class="arrow-text" style="display: inline-block; vertical-align: top; font-size: 13px; margin-top: 1px">Previous</span>
+        <button class="text-aqua prev-next-button" [disabled]="!videosData.prevPageToken" (click)="switchPage(videosData.prevPageToken)">
+            <beyond-arrow-svg
+                width="14"
+            ></beyond-arrow-svg>
+            <span class="arrow-text left">Previous</span>
         </button>
-        <button class="text-aqua" [disabled]="!videosData.nextPageToken" (click)="switchPage(videosData.nextPageToken)">
-            <span class="arrow-text">Next</span>
-            <img class="arrow-next" src="assets/images/back_arrow.svg">
+        <button class="text-aqua prev-next-button" [disabled]="!videosData.nextPageToken" (click)="switchPage(videosData.nextPageToken)">
+            <span class="arrow-text right">Next</span>
+            <beyond-arrow-svg
+                width="14"
+                arrowDirection="right"
+            ></beyond-arrow-svg>
         </button>
     </div>
 </div>

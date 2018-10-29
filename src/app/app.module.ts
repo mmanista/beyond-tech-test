@@ -12,8 +12,9 @@ import { SingleVideoTileComponent } from './components/single-video-tile/single-
 import { DateTimePipe } from './pipes/date-time.pipe';
 import { TextEllipsisPipe } from './pipes/text-ellipsis.pipe';
 import { PublicVideosOnlyPipe } from './pipes/public-videos-only.pipe';
-import { PlayVideoComponent } from './components/play-video.component/play-video.component';
+import { PlayVideoComponent } from './components/play-video/play-video.component';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
+import { ArrowSvgComponent } from './components/arrow-svg/arrow-svg.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
         VideosListComponent,
         SingleVideoTileComponent,
         PlayVideoComponent,
+        ArrowSvgComponent,
         DateTimePipe,
         TextEllipsisPipe,
         PublicVideosOnlyPipe,

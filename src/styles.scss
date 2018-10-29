@@ -96,3 +96,21 @@ button {
     line-height: 1.25;
     color: $beyond-dark-grey;
 }
+
+// pagination / back to list arrow hover effect
+.prev-next-button {
+    color: $beyond-aqua;
+    fill: $beyond-aqua;
+    transition: color 0.3s;
+
+    #back_arrow {
+        transition: fill 0.3s;
+    }
+
+    &:hover {
+        color: white;
+        #back_arrow {
+            fill: white;
+        }
+    }
+}

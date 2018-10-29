@@ -34,9 +34,11 @@
             {{singleVideoData.items[0].snippet.localized.description | textEllipsis: 200}}
         </div>
         <div class="back-to-list-container">
-            <a class="back-link" [routerLink]="['/']">
-                <img class="back-arrow" src="assets/images/back_arrow.svg">
-                <span class="text-aqua back-to-list-text">Back to list</span>
+            <a class="back-link prev-next-button" [routerLink]="['/']">
+               <beyond-arrow-svg
+                   [width]="14"
+               ></beyond-arrow-svg>
+                <span class="arrow-text back-to-list-text">Back to list</span>
             </a>
         </div>
     </div>
