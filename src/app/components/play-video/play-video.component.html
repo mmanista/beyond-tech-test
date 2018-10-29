@@ -1,0 +1,45 @@
+<div class="single-video-container" *ngIf="isLoading === false">
+    <div class="player-outer-container" [ngClass]="{'no-maxres': !singleVideoData?.items[0].snippet.thumbnails.maxres}">
+        <div *ngIf="singleVideoData?.items.length === 1" class="player-inner-container">
+            <div class="player-thumbnail"
+                 *ngIf="!playClicked"
+                 (click)="playClicked = true"
+            >
+                <img *ngIf="singleVideoData.items[0].snippet.thumbnails.maxres"
+                     class="player-thumbnail-img"
+                     [src]="singleVideoData.items[0].snippet.thumbnails.maxres.url"
+                >
+                <img *ngIf="!singleVideoData.items[0].snippet.thumbnails.maxres"
+                     class="player-thumbnail-img no-maxres"
+                     [src]="singleVideoData.items[0].snippet.thumbnails.high.url">
+
+                <img class="beyond-play-button" alt="Play video" src="assets/images/play_button.svg" width="28">
+            </div>
+            <iframe *ngIf="playClicked"
+                    class="player"
+                    frameborder="0"
+                    allowfullscreen
+                    [src]="(('https://www.youtube.com/embed/' + singleVideoData.items[0].id) | safeUrl)">
+            </iframe>
+        </div>
+    </div>
+    <div class="video-description-container">
+        <div class="beyond-video-title video-title">
+            {{singleVideoData.items[0].snippet.localized.title}}
+        </div>
+        <div class="beyond-video-published-date">
+            Published on {{singleVideoData.items[0].contentDetails.videoPublishedAt | dateTime}}
+        </div>
+        <div class="beyond-video-description">
+            {{singleVideoData.items[0].snippet.localized.description | textEllipsis: 200}}
+        </div>
+        <div class="back-to-list-container">
+            <a class="back-link prev-next-button" [routerLink]="['/']">
+               <beyond-arrow-svg
+                   [width]="14"
+               ></beyond-arrow-svg>
+                <span class="arrow-text back-to-list-text">Back to list</span>
+            </a>
+        </div>
+    </div>
+</div>

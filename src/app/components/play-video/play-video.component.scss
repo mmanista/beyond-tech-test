@@ -1,0 +1,115 @@
+@import 'variables';
+
+.single-video-container {
+    min-height: 534px;
+
+    > .video-description-container {
+
+        > .video-title {
+            font-family: Alfa Slab One, Helvetica, sans-serif;
+            margin-bottom: 15px;
+        }
+
+        > .beyond-video-published-date {
+            margin-bottom: 12px;
+        }
+
+        > .beyond-video-description {
+            margin-bottom: 17px;
+        }
+
+        > .back-to-list-container > .back-link {
+
+            > .back-to-list-text {
+                font-family: Roboto, Helvetica, sans-serif;
+                font-size: 13px;
+                display: inline-block;
+                margin-top: 1px;
+                margin-left: 17px;
+                vertical-align: top;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $breakpoint-576 - 1) {
+        > .player-outer-container,
+        > .video-description-container {
+            width: 100%;
+        }
+
+        > .player-outer-container {
+            margin-bottom: 27px;
+        }
+    }
+
+    @media only screen and (min-width: $breakpoint-576) {
+
+        > .player-outer-container {
+            width: 58.5%;
+            max-width: 600px;
+            display: inline-block;
+            margin-right: 26px;
+        }
+
+        > .video-description-container {
+            vertical-align: top;
+            width: calc(100% - 58.5% - 26px);
+            display: inline-block;
+        }
+    }
+
+    > .player-outer-container.no-maxres {
+        max-width: 480px;
+
+        > .player-inner-container {
+            padding-bottom: 75%;
+
+            > .player-thumbnail > .player-thumbnail-img.no-maxres {
+                max-width: 480px;
+            }
+        }
+    }
+}
+
+
+@mixin player-and-thumbnail() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.player-inner-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    > .player {
+        @include player-and-thumbnail();
+    }
+
+    > .player-thumbnail {
+        @include player-and-thumbnail();
+        > .player-thumbnail-img {
+            width: 100%;
+            cursor: pointer;
+        }
+        > .beyond-play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+    }
+}
+
+// margin pomiedzy kolumnami 26px na desktopie
+// na telefonie 27px margin bottom
+// ikona 14px
+
+// od tytulu do 1 akapitu margin 15px
+
+// od konca tekstu do strzalki 17px desktop
+// szerokosc video 600 dla 1024

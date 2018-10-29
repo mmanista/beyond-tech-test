@@ -1,0 +1,17 @@
+<div class="single-video-tile" (click)="gotoVideo()">
+    <div class="position-relative-helper">
+        <img class="video-img" [src]="videoDetails.snippet.thumbnails.medium.url">
+        <div class="video-title-container">
+            <span class="beyond-video-title video-title">{{videoDetails.snippet.title}}</span>
+            <div class="play-button">
+                <img src="assets/images/play_button.svg">
+            </div>
+        </div>
+    </div>
+    <div class="beyond-video-published-date video-published-date text-light-grey">
+        <span>Published on {{videoDetails.contentDetails.videoPublishedAt | dateTime}}</span>
+    </div>
+    <div class="beyond-video-description video-description text-dark-grey">
+        <span>{{videoDetails.snippet.description | textEllipsis}}</span>
+    </div>
+</div>

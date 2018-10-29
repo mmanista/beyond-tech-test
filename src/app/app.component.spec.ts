@@ -1,6 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { AppTitleComponent } from './components/app-title/app-title.component';
+import { VideosListComponent } from './components/videos-list/videos-list.component';
+import { SingleVideoTileComponent } from './components/single-video-tile/single-video-tile.component';
+import { PlayVideoComponent } from './components/play-video/play-video.component';
+import { ArrowSvgComponent } from './components/arrow-svg/arrow-svg.component';
+import { DateTimePipe } from './pipes/date-time.pipe';
+import { TextEllipsisPipe } from './pipes/text-ellipsis.pipe';
+import { PublicVideosOnlyPipe } from './pipes/public-videos-only.pipe';
+import { SafeUrlPipe } from './pipes/safe-url.pipe';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -9,7 +18,16 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+          AppComponent,
+          AppTitleComponent,
+          VideosListComponent,
+          SingleVideoTileComponent,
+          PlayVideoComponent,
+          ArrowSvgComponent,
+          DateTimePipe,
+          TextEllipsisPipe,
+          PublicVideosOnlyPipe,
+          SafeUrlPipe
       ],
     }).compileComponents();
   }));
@@ -20,16 +38,4 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'beyond-tech-test'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('beyond-tech-test');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to beyond-tech-test!');
-  });
 });

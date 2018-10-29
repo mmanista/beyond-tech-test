@@ -5,6 +5,7 @@
     background-image: url('/assets/images/header_bg.png');
     height: 40px;
     width: 100%;
+    margin-bottom: 48px;
 }
 
 .title-img-container {
@@ -24,5 +25,9 @@
 
     > .title-img {
         max-width: 100%;
+
+        > img {
+            max-width: 100%;
+        }
     }
 }
