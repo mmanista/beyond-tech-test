@@ -58,6 +58,7 @@
         }
     }
 
+    /* no-maxres is used when a video object does not have a maxres image available */
     > .player-outer-container.no-maxres {
         max-width: 480px;
 
@@ -104,12 +105,3 @@
         }
     }
 }
-
-// margin pomiedzy kolumnami 26px na desktopie
-// na telefonie 27px margin bottom
-// ikona 14px
-
-// od tytulu do 1 akapitu margin 15px
-
-// od konca tekstu do strzalki 17px desktop
-// szerokosc video 600 dla 1024
