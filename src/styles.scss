@@ -107,10 +107,18 @@ button {
         transition: fill 0.3s;
     }
 
-    &:hover {
+    &:hover:not([disabled]) {
         color: white;
+        cursor: pointer;
         #back_arrow {
             fill: white;
+        }
+    }
+
+    &[disabled] {
+        color: $beyond-dark-grey;
+        #back_arrow {
+            fill: $beyond-dark-grey;
         }
     }
 }

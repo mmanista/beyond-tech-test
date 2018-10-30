@@ -1,20 +1,21 @@
 <div class="videos-list">
     <div class="row">
-        <div *ngFor="let video of videosData.items | publicVideosOnly" class="three-splitted-col">
+        <div *ngFor="let video of videosData.items | publicVideosOnly; let i = index" class="three-splitted-col">
             <beyond-single-video-tile
                 [videoDetails]="video"
+                [index]="i"
             >
             </beyond-single-video-tile>
         </div>
     </div>
     <div class="pagination">
-        <button class="text-aqua prev-next-button" [disabled]="!videosData.prevPageToken" (click)="switchPage(videosData.prevPageToken)">
+        <button id="prevPage" class="text-aqua prev-next-button" [disabled]="!videosData.prevPageToken" (click)="switchPage(videosData.prevPageToken)">
             <beyond-arrow-svg
                 width="14"
             ></beyond-arrow-svg>
             <span class="arrow-text left">Previous</span>
         </button>
-        <button class="text-aqua prev-next-button" [disabled]="!videosData.nextPageToken" (click)="switchPage(videosData.nextPageToken)">
+        <button id="nextPage" class="text-aqua prev-next-button" [disabled]="!videosData.nextPageToken" (click)="switchPage(videosData.nextPageToken)">
             <span class="arrow-text right">Next</span>
             <beyond-arrow-svg
                 width="14"
