@@ -10,6 +10,7 @@ export class SingleVideoTileComponent {
 
     constructor(private readonly router: Router) {}
     @Input() videoDetails: any;
+    @Input() index: number;
 
     gotoVideo() {
         this.router.navigate(['/play/' + this.videoDetails.snippet.resourceId.videoId]);

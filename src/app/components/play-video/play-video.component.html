@@ -2,6 +2,7 @@
     <div class="player-outer-container" [ngClass]="{'no-maxres': !singleVideoData?.items[0].snippet.thumbnails.maxres}">
         <div *ngIf="singleVideoData?.items.length === 1" class="player-inner-container">
             <div class="player-thumbnail"
+                 id="playerThumbnail"
                  *ngIf="!playClicked"
                  (click)="playClicked = true"
             >
@@ -13,7 +14,7 @@
                      class="player-thumbnail-img no-maxres"
                      [src]="singleVideoData.items[0].snippet.thumbnails.high.url">
 
-                <img class="beyond-play-button" alt="Play video" src="assets/images/play_button.svg" width="28">
+                <img class="beyond-play-button" alt="Play video" src="assets/images/play_button.svg">
             </div>
             <iframe *ngIf="playClicked"
                     class="player"
@@ -24,14 +25,14 @@
         </div>
     </div>
     <div class="video-description-container">
-        <div class="beyond-video-title video-title">
+        <div class="beyond-video-title video-title" id="videoTitle">
             {{singleVideoData.items[0].snippet.localized.title}}
         </div>
-        <div class="beyond-video-published-date">
-            Published on {{singleVideoData.items[0].contentDetails.videoPublishedAt | dateTime}}
+        <div class="beyond-video-published-date" id="videoPublishedDate">
+            Published on {{singleVideoData.items[0].snippet.publishedAt | dateTime}}
         </div>
-        <div class="beyond-video-description">
-            {{singleVideoData.items[0].snippet.localized.description | textEllipsis: 200}}
+        <div class="beyond-video-description" id="videoDescription">
+            {{singleVideoData.items[0].snippet.localized.description | textEllipsis}}
         </div>
         <div class="back-to-list-container">
             <a class="back-link prev-next-button" [routerLink]="['/']">

@@ -102,6 +102,11 @@
             left: 50%;
             transform: translate(-50%, -50%);
             cursor: pointer;
+            width: 56px;
+
+            @media only screen and (max-width: $breakpoint-576 - 1) {
+                width: 28px;
+            }
         }
     }
 }
